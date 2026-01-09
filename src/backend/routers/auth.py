@@ -26,7 +26,7 @@ def login(username: str, password: str) -> Dict[str, Any]:
 
     # Return teacher information (excluding password)
     return {
-        "username": teacher["username"],
+        "username": teacher["_id"],
         "display_name": teacher["display_name"],
         "role": teacher["role"]
     }
@@ -41,7 +41,7 @@ def check_session(username: str) -> Dict[str, Any]:
         raise HTTPException(status_code=404, detail="Teacher not found")
 
     return {
-        "username": teacher["username"],
+        "username": teacher["_id"],
         "display_name": teacher["display_name"],
         "role": teacher["role"]
     }
